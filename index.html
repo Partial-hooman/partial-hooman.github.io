@@ -36,24 +36,17 @@
   margin-left: 170px;
 }
 
-a {
-  padding: 20px 50px;
-  margin-top: 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background: white;
-  font-weight: bold;
-  color: red;
-  transition: background 0.3s, color 0.3s, transform 0.15s, box-shadow 0.3s;
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
-a:hover {
-  background: black;
-  transform: scale(1.05);
-  box-shadow: rgba(255,0,0,0.5) 0 0 10px;
-}
-a:active {
-  transform: scale(0.95);
+
+a:hover, a:active {
+  background-color: red;
 }
 
 .question {
@@ -78,11 +71,12 @@ p span {
     <h1>Welcome to the <span>KDAG</span> Quiz</h1>
     <p><span>This</span> is a short fun <span>quiz</span> to test your knowledge. You’ll face <span>10</span> multiple-choice
       <span>questions</span>. At the end, you’ll get a <span>score</span> and some <span>feedback</span>.</p>
-    <a href='script.html' class="button"><h2>START</h2>
+    <a href='script.html' ><h2>START</h2>
     </a>
   </div>
 </body>
 </html>
+
 
 
 
