@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>KDAG Quiz</title>
+  <style>
+  body {
+  background: black;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+}
+.header {
+  vertical-align: top;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  font-size: 18px;
+}
+.container {
+  background: #111;
+  horizontal-align: center;
+  
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 80%;
+  max-width: 600px;
+  max-height: 500px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+  margin-top: 200px;
+  margin-left: 170px;
+}
+
+button {
+  padding: 20px 50px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: white;
+  font-weight: bold;
+  color: red;
+  transition: background 0.3s, color 0.3s, transform 0.15s, box-shadow 0.3s;
+}
+button:hover {
+  background: black;
+  transform: scale(1.05);
+  box-shadow: rgba(255,0,0,0.5) 0 0 10px;
+}
+button:active {
+  transform: scale(0.95);
+}
+
+.question {
+  margin: 20px 0;
+  text-align: left;
+}
+h1 span {
+  color: red;
+}
+p span {
+  color: red;
+  font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+  <span class = "header">
+    KHARAGPUR <strong>DATA</strong><br><strong>ANALYTICS</strong> GROUP
+  </span>
+  <div class="container">
+    <h1>Welcome to the <span>KDAG</span> Quiz</h1>
+    <p><span>This</span> is a short fun <span>quiz</span> to test your knowledge. You’ll face <span>10</span> multiple-choice
+      <span>questions</span>. At the end, you’ll get a <span>score</span> and some <span>feedback</span>.</p>
+    <a>
+      <button href='script.html'><h2>START</h2></button>
+    </a>
+  </div>
+</body>
+</html>

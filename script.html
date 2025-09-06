@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>KDAG Quiz - Questions</title>
+ <style>
+  body {
+background: black;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: #111;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+button {
+  padding: 20px 50px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: white;
+  font-weight: bold;
+  color: red;
+  transition: background 0.3s, color 0.3s, transform 0.15s, box-shadow 0.3s;
+}
+button:hover {
+  background: black;
+  transform: scale(1.05);
+  box-shadow: rgba(255,0,0,0.5) 0 0 10px;
+}
+button:active {
+  transform: scale(0.95);
+}
+.question {
+  margin: 20px 0;
+  text-align: left;
+}
+h1 span {
+  color: red;
+}
+p span {
+  color: red;
+  font-weight: bold;
+}
+
+
+</style>
+<body>
+  <div class="container">
+    <h1><span>KDAG</span> Quiz</h1>
+    <form id="quizForm">
+      
+      <div class="question">
+        <p><span>1.</span> You have a dataset of 1,000 students’ exam scores.
+           To quickly understand the overall performance trend, which measure would be most useful?</p>
+        <label><input type="radio" name="q1" value="A"> Highest marks scored</label><br>
+        <label><input type="radio" name="q1" value="B"> Mean marks scored by the students</label><br>
+        <label><input type="radio" name="q1" value="C"> No. of students passing</label><br>
+      </div>
+
+      
+      <div class="question">
+        <p><span>2.</span> You plot monthly sales for a shop on a line chart. What insight does this visualization give best?</p>
+        <label><input type="radio" name="q2" value="A"> Total no. of sales over time</label><br>
+        <label><input type="radio" name="q2" value="B"> Total no. of sales in the whole month</label><br>
+        <label><input type="radio" name="q2" value="C"> No. of products bought by each customer</label><br>
+      </div>
+
+      <div class="question">
+        <p><span>3.</span> Which of the following data is the most reliable in knowing the the ctc of the average student placed
+        in a partcular batch?</p>
+        <label><input type="radio" name="q3" value="A"> Mean</label><br>
+        <label><input type="radio" name="q3" value="B"> Median</label><br>
+        <label><input type="radio" name="q3" value="C"> Highest package</label><br>
+      </div>
+
+      <div class="question">
+        <p><span>4.</span> Which of the following is a logical reason to remove outliers from your dataset before analysis?</p>
+        <label><input type="radio" name="q4" value="A"> They always reduce your final profit</label><br>
+        <label><input type="radio" name="q4" value="B"> They make the dataset too small to work with</label><br>
+        <label><input type="radio" name="q4" value="C"> They can distort averages and trends</label><br>
+      </div>
+
+      <div class="question">
+        <p><span>5.</span> You are given a dataset of customers, but it contains missing values in the "Age" column.
+           What is the best first step?</p>
+        <label><input type="radio" name="q5" value="A"> Delete the entire dataset</label><br>
+        <label><input type="radio" name="q5" value="B"> Check how many values are missing and handle them</label><br>
+        <label><input type="radio" name="q5" value="C"> Replace all missing values with zero without checking</label><br>
+      </div>
+
+      
+
+      <button type="submit">SUBMIT</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  
+  const answers = {
+    q1: "B",
+    q2: "A",
+    q3: "B",
+    q4: "C",
+    q5: "B",
+    
+  };
+
+  let score = 0;
+  let total = Object.keys(answers).length;
+
+  for (let key in answers) {
+    const selected = document.querySelector(`input[name="${key}"]:checked`);
+    if (selected && selected.value === answers[key]) {
+      score++;
+    }
+  }
+
+  
+  localStorage.setItem("quizScore", score);
+  localStorage.setItem("quizTotal", total);
+
+
+  alert("Congratulations! You scored " + score + " out of " + total + ".");
+
+});
+
+  </script>
+</body>
+</html>
